@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM, { render } from 'react-dom';
+import Chat from '../src/Chat'
+import News from '../src/News'
+import ErrorBoundary from '../src/ErrorBoundary';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export default function App() {
+    return (
+      <div style={{ padding: "0.5rem 1.5rem" }}>
+        <h1>Welcome!</h1>
+        <hr />
+        <ErrorBoundary>
+          <News />
+        </ErrorBoundary>
+        <hr />
+        <ErrorBoundary>
+          <Chat />
+        </ErrorBoundary>
+      </div>
+    );
+  }
